@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <script>
+           
+           function EditPEmployee(){
+  var eid=document.getElementById("idEd").value;
+ var emnam=document.getElementById("nameEd").value;
+var emnum=document.getElementById("telephonEd").value;
+var empasnum=document.getElementById("passportEd").value;
+var emaddred=document.getElementById("adressEd").value;
+ var emunam=document.getElementById("usernameEd").value;
+ var empsw=document.getElementById("pswEd").value;
+
+//var vinsurance=document.getElementById(\"\").value;\n
+   var xhttp= new XMLHttpRequest();
+var parmtrs="idEd="+eid+"&nameEd="+emnam+"&telephonEd="+emnum+"&passportEd="+empasnum+" \n\
+&adressEd="+emaddred+"&usernameEd="+emunam+"&pswEd="+empsw+"";
+   xhttp.onreadystatechange = function (){
+if(this.readyState==4&& this.status==200){
+// document.getElementById(\"divTest\").innerHTML=this.responseText;
+var alrt=this.responseText;
+            alert(alrt);
+       }
+};
+xhttp.open("Post","http://yemwfsales-env.us-east-2.elasticbeanstalk.com/edtpointempl",false);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send(parmtrs);
+}
+</script>
+<script>
+            function testFunc(){
+
+ 
+    var xhttp=new XMLHttpRequest();
+    var vname=document.getElementById("Txname").value;
+
+    var parms="Txname="+vname+"";
+    xhttp.onreadystatechange=function (){
+       if(this.readyState==4&&this.status==200){
+      var alrt=this.responseText;
+           alert(alrt);
+        }
+   };
+   xhttp.open("Post","http://localhost:8080/WifiSales/test",false);
+   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(parms);
+            
+    }
+   
+        </script>
+        <script> 
+              function showClProDiv(){
+                document.getElementById("BuyCardDiv").style.display="none";
+                document.getElefunction showClPoDiv()mentById("KnowBdiv").style.display="none";
+                 document.getElementById("SearcCardDiv").style.display="none";
+                  document.getElementById("reviewDiv").style.display="none";
+                  document.getElementById("ClintProcedures").style.display="inline-block";
+      }
+        function ClProcedures(){
+  document.getElementById("reviewDiv").style.display="none";
+ var datfr=document.getElementById("datefrom").value;
+ var dateto=document.getElementById("dateto").value;
+
+//var vinsurance=document.getElementById(\"\").value;\n
+   var xhttp= new XMLHttpRequest();
+var parmtrs="datefrom="+datfr+"&dateto="+dateto+"";
+   xhttp.onreadystatechange = function (){
+if(this.readyState==4&& this.status==200){
+    document.getElementById("reviewDiv").style.display="block";
+ document.getElementById("reviewDiv").innerHTML=this.responseText;
+
+
+       }
+};
+xhttp.open("Post","http://yemwfsales-env.us-east-2.elasticbeanstalk.com/clientprocerure",false);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send(parmtrs);
+}
+        
+        </script>
+        <script>
+            
+            function DelPointDetail(){
+                
+     document.getElementById("divTest").style.display="none";
+ var pId=document.getElementById("DelSrcTxt").value;
+ 
+
+//var vinsurance=document.getElementById(\"\").value;\n
+   var xhttp= new XMLHttpRequest();
+var parmtrs="DelSrcTxt="+pId+"";
+   xhttp.onreadystatechange = function (){
+if(this.readyState==4&& this.status==200){
+    document.getElementById("divTest").style.display="inline";
+ document.getElementById("divTest").innerHTML=this.responseText;
+
+ var parmtrs="Txtname="+vname+"&TxtTelephon="+vnumber+"&TxtAdress="+vadress+"\
+&TxtPasId="+psIdC+"&TxtInsurance="+vinsurance+"&txtuserName="+usn+"&textpassWord="+psw+"";
+       }
+};
+xhttp.open("Post","http://yemwfsales-env.us-east-2.elasticbeanstalk.com/searchpoint2del",false);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send(parmtrs); 
+                
+            }
+             function EdtPointDetail(){
+                
+     document.getElementById("divTest").style.display="none";
+ var pId=document.getElementById("EdtSrcTxt").value;
+ 
+
+//var vinsurance=document.getElementById(\"\").value;\n
+   var xhttp= new XMLHttpRequest();
+var parmtrs="EdtSrcTxt="+pId+"";
+   xhttp.onreadystatechange = function (){
+if(this.readyState==4&& this.status==200){
+    document.getElementById("divTest").style.display="inline";
+ document.getElementById("divTest").innerHTML=this.responseText;
+
+
+       }
+};
+xhttp.open("Post","http://yemwfsales-env.us-east-2.elasticbeanstalk.com/searchpoint2edt",false);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send(parmtrs); 
+                
+            }
+        </script>
+        <div id="ClintProcedures" style="width: 50%; background: antiquewhite;display: none">
+            <table>
+                <tr>
+                    <td style="width: 25%">التاريخ من </td>
+                    <td style="width: 25%">التاريخ الى</td>
+                </tr>
+            </table>   
+        <form>
+            <table>
+                <tr>
+                    <td> <input type="date" id="datefrom" name="datefrom"
+                                onchange="ClProcedures()"  style="height: 30px;width: 200px"
+                                required></td> <td>اختر التاريخ من هنا</td>
+                    <td><input type="date" id="dateto" name="dateto" 
+                               onchange="ClProcedures()"  style="height: 30px;width: 200px" 
+                               required></td><td>اختر التاريخ من هنا</td>
+                </tr>
+                
+            </table>
+            <table><tr><td><input type="submit" value="ابحث" 
+                                  style="height: 30px;width: 200px"></td></tr></table>
+        </form>
+        </div>
+       <form action="javascript:;"onsubmit="testFunc(this)">
+         <table>
+             <tr>
+                  <td>
+       <input type="text" name="Txtname" placeholder="ادخل اسم النقطة" id="Txname" required>
+                  </td>
+             </tr>
+         <tr>
+             <td>
+      <input type="submit" style="width: 300px;height: 50px;" value="اضف">
+         </tr>
+        
+        </table>
+       </form>
+    </body>
+</html>

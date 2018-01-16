@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            td{
+                padding: 10px;
+            }
+            div.countainer{
+                min-height: 700px;
+            }
+            div.login{
+                width: 50%;
+                border: 1px solid black;
+                border-radius: 5px;
+                background-color: lightslategray;
+            }
+            footer {
+    position:fixed;
+    bottom:-3.5%;
+    align-content: center;
+    
+    
+    width: 100%;
+}
+        </style>
+    </head>
+    <body>
+        
+        <center>
+        <h1><u>مرحبا بكم</u></h1>
+    </center>
+    <center><h1><u>الدخول</u></h1></center>
+    <center>
+        <div class="login">
+            <form action="login" method="POST">
+                <table>
+                    <tr>
+                        <td><input name="usernametxt" type="text" placeholder="اسم المستخدم"
+                                   class="form-control"></td> <td>: ادخل الاسم هنا</td>
+                    </tr>
+                    <tr>
+                        <td><input name="passwordtxt" type="password" placeholder="كلمة المرور"
+                                   class="form-control"></td> <td>:ادخل كلمة المرور هنا</td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2"><input class="btn btn-success" type="submit" value="دخول" style="text-align: center"></td>
+                    </tr>
+                    
+                </table>
+            </form>
+        </div>
+        </center>
+          
+    </body>
+</html>
